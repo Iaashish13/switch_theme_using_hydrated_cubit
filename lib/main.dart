@@ -1,5 +1,7 @@
 import 'package:change_theme/cubit/change_theme_cubit.dart';
 import 'package:change_theme/screen/change_theme_screen.dart';
+import 'package:change_theme/theme/dark_theme.dart';
+import 'package:change_theme/theme/light_them.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -10,8 +12,8 @@ void main() async {
   HydratedBloc.storage = await HydratedStorage.build(
       storageDirectory: await getApplicationDocumentsDirectory());
 
-  runApp( BlocProvider<ChangeThemeCubit>(
-    create: (context) =>ChangeThemeCubit(),
+  runApp(BlocProvider<ChangeThemeCubit>(
+    create: (context) => ChangeThemeCubit(),
     child: const MyApp(),
   ));
 }
@@ -21,12 +23,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Switch Theme',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ChangeThemeScreen(),
+    return BlocBuilder<ChangeThemeCubit, bool>(
+      builder: (context, state) {
+        return MaterialApp(
+          title: 'Switch Theme',
+          theme: state ? darkTheme : lightTheme,
+          home: const ChangeThemeScreen(),
+        );
+      },
     );
   }
 }

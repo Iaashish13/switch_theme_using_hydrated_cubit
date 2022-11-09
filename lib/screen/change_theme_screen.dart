@@ -9,13 +9,20 @@ class ChangeThemeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Change theme'),
+        title: const Text(
+          'Switch Theme',
+        ),
       ),
       body: SafeArea(child: BlocBuilder<ChangeThemeCubit, bool>(
         builder: (context, state) {
           return Center(
             child: SwitchListTile(
-                title: const Text('Change Theme'),
+                subtitle: Text('Dark theme are easier on your eyes',
+                    style: Theme.of(context).textTheme.bodyText2),
+                title: Text(
+                  'Change Theme',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
                 value: state,
                 onChanged: (value) {
                   BlocProvider.of<ChangeThemeCubit>(context)
