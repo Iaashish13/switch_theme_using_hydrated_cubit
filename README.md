@@ -17,4 +17,4 @@ state using hydarted cubit.
 
 ## Demo
 
-![](https://github.com/Iaashish13/switch_theme_using_hydrated_cubit/blob/main/lib/gif/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20Max%20-%202022-11-11%20at%2015.55.48.gif)
+<img src ="https://github.com/Iaashish13/switch_theme_using_hydrated_cubit/blob/main/lib/gif/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20Max%20-%202022-11-11%20at%2015.55.48.gif" width="400" height="800">
